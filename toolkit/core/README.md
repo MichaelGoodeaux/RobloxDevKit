@@ -50,3 +50,38 @@ Tracks and manages player statistics, such as health and score.
    local SpawnSystem = require(script.Parent.Core.SpawnSystem)
    local Inventory = require(script.Parent.Core.Inventory)
    local PlayerStats = require(script.Parent.Core.PlayerStats)
+   ```
+
+2. **Instantiating Objects**: Create instances of the `GameRounds`, `SpawnSystem`, `Inventory`, and `PlayerStats` classes as needed.
+
+3. **Connecting to Game Logic**: Integrate these modules into your game loop or event handling to manage game rounds, player spawning, inventory actions, and player stats effectively.
+
+## Usage/Examples
+
+Here is a simple example of how to use these scripts in your main game logic:
+
+```lua
+-- MainGameScript.lua
+
+local GameRounds = require(script.Parent.Core.GameRounds)
+local SpawnSystem = require(script.Parent.Core.SpawnSystem)
+local Inventory = require(script.Parent.Core.Inventory)
+local PlayerStats = require(script.Parent.Core.PlayerStats)
+
+-- Initialize spawn system
+local spawnSystem = SpawnSystem
+spawnSystem:initSpawnPoints()
+
+local players = game.Players:GetPlayers()
+for _, player in ipairs(players) do
+    -- Create player stats and inventory
+    local stats = PlayerStats.new(player)
+    local inventory = Inventory.new()
+
+    -- Spawn player
+    spawnSystem:spawnPlayer(player)
+
+    -- Start the game rounds
+    GameRounds:startRound()
+end
+```
