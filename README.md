@@ -4,6 +4,7 @@ Welcome to the Roblox Game DevKit! This repository contains a collection of reus
 
 ## Folder Structure
 
+```
 .
 └── toolkit/
     ├── admintools/
@@ -64,6 +65,7 @@ Welcome to the Roblox Game DevKit! This repository contains a collection of reus
     │   └── TableHelpers.lua
     ├── HowToWriteLuau.lua
     └── SoftwareEngineeringTips.lua
+```
 
 ### Description of Folders
 
